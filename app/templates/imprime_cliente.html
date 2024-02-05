@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='imovel.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='casa_imob.png') }}" type="image/x-icon">
+    <title>Imobiliária ForElse</title>
+</head>
+
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='casa_imob.png') }}" alt="Logo Imobiliária ForElse" id="logo">
+        <h1>Clientes cadastrados:</h1>
+    </header>
+
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>CPF</th>
+            <th>RG</th>
+            <th>Telefone</th>
+            <th>Banco</th>
+            <th>Agencia</th>
+        </tr>
+        {% for cliente in dados %}
+            <tr>
+                <td>{{ cliente[0] }}</td>
+                <td>{{ cliente[1] }}</td>
+                <td>{{ cliente[2] }}</td>
+                <td>{{ cliente[3] }}</td>
+                <td>{{ cliente[4] }}</td>
+                <td>{{ cliente[5] }}</td>
+                <td>{{ cliente[6] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <footer>
+        Para mais informações, entre em contato:<br>
+        Número: (11) 1234-5678<br>
+        Email: contato@imobiliariaforelse.com
+    </footer>
+
+</body>
+</html>
